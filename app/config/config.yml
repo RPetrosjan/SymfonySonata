@@ -22,6 +22,7 @@ framework:
     templating:
         engines: ['twig']
     default_locale: '%locale%'
+   # default_locale: 'fr_FR'
     trusted_hosts: ~
     session:
         # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
@@ -32,7 +33,7 @@ framework:
     assets: ~
     php_errors:
         log: true
-    translator: { fallbacks: ["en"] }
+    translator: { fallbacks: ["en_EN","fr_FR"] }
 
 # Twig Configuration
 twig:
@@ -78,6 +79,8 @@ sonata_block:
             contexts: [admin]
 
 sonata_admin:
-    title: 'Ruben Admin Block'
+    title: 'Admin Block'
     title_logo: /img/admin_logo.png
+    templates:
+        layout: admin_topnav.html.twig
 

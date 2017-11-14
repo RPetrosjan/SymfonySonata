@@ -22,6 +22,11 @@ services:
         # but if a service is unused, it's removed anyway
         exclude: '../../src/AppBundle/{Entity,Repository,Tests}'
 
+    AppBundle\EventSubscriber\LocaleSubscriber:
+        arguments: ['%kernel.default_locale%']
+        # redundant if you're using autoconfigure
+        tags: [kernel.event_subscriber]
+
     # controllers are imported separately to make sure they're public
     # and have a tag that allows actions to type-hint services
     AppBundle\Controller\:

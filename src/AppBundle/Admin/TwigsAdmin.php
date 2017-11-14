@@ -21,12 +21,12 @@ class TwigsAdmin extends AbstractAdmin
         $formMapper
             ->add('twigName', 'text')
             ->add('twigCss', 'text',array(
-                'label' => 'Twig CSS',
+                'label' => $this->trans('add_twig_css'),
                 'required' => false,
                 'empty_data' => '',
             ))
             ->add('twigJs', 'text', array(
-                'label' => 'Twig Java Script',
+                'label' => $this->trans('add_twig_js'),
                 'required' => false,
                 'empty_data' => '',
             ))
