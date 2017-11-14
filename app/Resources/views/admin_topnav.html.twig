@@ -2,15 +2,21 @@
 
 {% block sonata_top_nav_menu %}
     {{ parent() }}
-    <br/><a href="/setlocale/fr_FR">FR</a> <a href="/setlocale/en_EN">EN</a>
-
-    <select class="mini" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
+    <div class="myselector">
+        <span>
+            {{ 'Langue'|trans }} :
+        </span>
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value);">
         <option value="/setlocale/en_EN"
                 {% if(app.request.locale == 'en_EN')%} selected {% endif %}
        >English</option>
         <option value="/setlocale/fr_FR"
                 {% if(app.request.locale == 'fr_FR')%} selected {% endif %} >France</option>
     </select>
+    </div>
+{% endblock %}
 
-
+{% block stylesheets %}
+    {{ parent() }}
+    <link href="{{ asset('bundles/admin/css/admin.css') }}" rel="stylesheet">
 {% endblock %}
