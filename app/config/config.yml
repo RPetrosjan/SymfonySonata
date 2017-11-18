@@ -82,5 +82,6 @@ sonata_admin:
     title: 'Admin Block'
     title_logo: /img/admin_logo.png
     templates:
-        layout: admin_topnav.html.twig
+        layout: admin/admin_topnav.html.twig
+
 

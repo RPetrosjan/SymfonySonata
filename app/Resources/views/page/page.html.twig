@@ -1,0 +1,10 @@
+<h1>PAGE TWIG</h1>
+<strong>PAGE : {{ dump(var_page) }}</strong><br>
+<strong>PAGE TITLE: {{ var_page.pageTitle }}</strong><br>
+<strong>PAGE TWIG:
+    {% for twig in var_page.twigs %}
+        <li>{{ twig.twigName }}</li>
+    {% else %}
+        <li><em>no user found</em></li>
+    {% endfor %}
+</strong><br>

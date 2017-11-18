@@ -51,9 +51,17 @@ class WebPagesAdmin extends AbstractAdmin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('pageTitle')
+            ->addIdentifier('pageTitle',null,array(
+                'editable' => true,
+            ))
             ->addIdentifier('pageKeyWord')
             ->addIdentifier('pageDescription')
+            ->add('_action', 'actions', array(
+                'actions' => array(
+                    'edit' => array(),
+                    'delete' => array(),
+                )
+            ))
         ;
 
     }
